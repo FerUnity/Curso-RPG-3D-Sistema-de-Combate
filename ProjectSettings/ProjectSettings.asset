@@ -155,6 +155,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.DefaultCompany.CursoRPG3DSistemadeCombate
     Standalone: com.DefaultCompany.Curso-RPG-3D-Sistema-de-Combate
   buildNumber:
     Standalone: 0
@@ -792,7 +793,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 1
+  activeInputHandler: 2
   cloudProjectId: 6977b7d7-f78f-4924-adab-a77d69380e5f
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []

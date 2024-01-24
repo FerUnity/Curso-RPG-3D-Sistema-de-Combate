@@ -227,6 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 99388962}
   - component: {fileID: 99388961}
+  - component: {fileID: 99388963}
   m_Layer: 0
   m_Name: CM FreeLook1
   m_TagString: Untagged
@@ -356,6 +357,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &99388963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99388960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 9
+  m_IgnoreTag: 
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 1
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0
+  m_DampingWhenOccluded: 0
+  m_OptimalTargetDistance: 0
 --- !u!1 &187075692
 GameObject:
   m_ObjectHideFlags: 3
@@ -406,10 +437,10 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0
-  m_VerticalDamping: 0
+  m_HorizontalDamping: 0.5
+  m_VerticalDamping: 0.5
   m_ScreenX: 0.5
-  m_ScreenY: 0.6
+  m_ScreenY: 0.5
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_SoftZoneWidth: 0.8
@@ -552,7 +583,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481736998}
-  m_LocalRotation: {x: -0.1106375, y: -0, z: -0, w: 0.99386084}
+  m_LocalRotation: {x: -0.1106375, y: -1e-45, z: -0, w: 0.99386084}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -757,7 +788,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954979786}
-  m_LocalRotation: {x: -0.12864938, y: -0, z: -0, w: 0.99169016}
+  m_LocalRotation: {x: -0.092541374, y: 0.000000004283136, z: 3.9807543e-10, w: 0.9957089}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -883,7 +914,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164957446}
-  m_LocalRotation: {x: -0.092541374, y: 0.000000004283136, z: 3.9807543e-10, w: 0.9957089}
+  m_LocalRotation: {x: -0.09254138, y: 0.000000004283138, z: 3.980756e-10, w: 0.9957089}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1714,7 +1745,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293273568}
-  m_LocalRotation: {x: -0.12864937, y: 0, z: 0, w: 0.9916901}
+  m_LocalRotation: {x: -0.092541374, y: 0.000000008566274, z: 7.9615115e-10, w: 0.9957089}
   m_LocalPosition: {x: 5.8972063, y: 0.39999998, z: -58.226143}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1877,6 +1908,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1293273571}
+  cinemachineFreeLook: {fileID: 99388961}
+  targetCam: {fileID: 1100980400}
+  rotationSpeedCamX: 3
+  rotationSpeedCamY: 5
   jumpPower: 35
   gravity: 9.8
   gravityMultiplayer: 1
@@ -1887,7 +1922,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  groundDistanceUp: 0.4
+  groundDistanceUp: 0.2
   groundDistance: 0.4
 --- !u!114 &1586912065
 MonoBehaviour:

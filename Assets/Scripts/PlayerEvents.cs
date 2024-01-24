@@ -8,12 +8,12 @@ public class PlayerEvents : MonoBehaviour
     // o sea en el GO RPG-Character hijo y que controlara los eventos del animator:
     //Doble click en la animacion/Events
 
-    //Referenciamos a la clase PlayerMotion del GO Padre:
+    //Referenciamos a la clase PlayerMotion.cs que esta en el GO Padre de donde esta este Script:
     PlayerMotion playerMotion;//Lo asignamos en met Awake()
 
     private void Awake()
     {
-        //Asigmamos la var creada a la clase:
+        //Asigmamos la var creada a la clase PlayerMotion.cs :
         playerMotion = GetComponentInParent<PlayerMotion>();
     }
 

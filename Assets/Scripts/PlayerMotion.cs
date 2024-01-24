@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 //Libreria para el nuevo Input System de Unity,
 //como componenete del GO personaje o RPG Character:
@@ -12,6 +13,16 @@ public class PlayerMotion : MonoBehaviour
     //Referencia a la camara que sigue al Player,
     //el mov del player la dara la perspect de esa camara:
     public Transform cam;
+
+    //Ref a camara CineMachine:
+    public CinemachineFreeLook cinemachineFreeLook;
+    //Y el target de la camara cinemachineFreeLook:
+    public GameObject targetCam;
+    //Y veloc de rotacion en X e Y, de esta camara:
+    public float rotationSpeedCamX, rotationSpeedCamY;
+    //Mov del Mouse que determina el mov de esta camara:
+    Vector2 m_look;
+
 
     public float jumpPower = 35f;//Fuerza DE SALTO
     //Gravedad: ver FixedUpdate():
@@ -134,6 +145,7 @@ public class PlayerMotion : MonoBehaviour
 
     //Creamos met publico para el mov del pàyer con parametro InputValue(lib UnityEngine.InputSystem)
     //que recibira la informacion del InputSystem en cjto con el componente Player Input del GO:
+
     public void OnMove(InputValue value)
     {
         //Le damos a la var _move el valor que estamos recibiendo
@@ -262,5 +274,17 @@ public class PlayerMotion : MonoBehaviour
         //Que el Player se pueda mover otra vez:
         StopEnd();
 
+    }
+
+    //MEt cam CineMachine:
+    public void OnCam(InputValue value)
+    {
+        //Debemos tener la dir de mov de la camara CineMachine que la determina el Mouse,
+        //llamando a una var Vector2:
+        m_look = value.Get<Vector2>();
+        //Accedemos a la rot en X e Y, de la camCineMach:
+        cinemachineFreeLook.m_XAxis.Value += m_look.x * rotationSpeedCamX;
+        cinemachineFreeLook.m_YAxis.Value += m_look.y * rotationSpeedCamY * Time.fixedDeltaTime;
+        //Para que el mov de la cam en Y sea controlado.
     }
 }
